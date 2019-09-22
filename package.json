@@ -40,7 +40,6 @@
     ]
   },
   "devDependencies": {
-    "@types/react-inspector": "^3.0.0",
     "@types/react-vega": "^6.0.0",
     "@types/recompose": "^0.30.7",
     "@typescript-eslint/eslint-plugin": "^2.3.0",

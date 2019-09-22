@@ -1217,14 +1217,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-inspector@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@types/react-inspector/-/react-inspector-3.0.0.tgz#062133a54a6712753a910f10c2eeac849839d80f"
-  integrity sha512-Xr9JERItLXWR20KMh6txdBNyjFDDoDxG8u8Mt1Ny/FN0sd6xUfOR/cy3FKORojJDt9gqdMDiNauVmTO9/yE7Rg==
-  dependencies:
-    "@types/react" "*"
-    csstype "^2.0.0"
-
 "@types/react-vega@^6.0.0":
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@types/react-vega/-/react-vega-6.0.0.tgz#6b3cbb849e5a040b358eb8d9a07eb821066d4d03"
@@ -3002,7 +2994,7 @@ cssstyle@^1.0.0, cssstyle@^1.1.1:
   dependencies:
     cssom "0.3.x"
 
-csstype@^2.0.0, csstype@^2.2.0:
+csstype@^2.2.0:
   version "2.6.6"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.6.tgz#c34f8226a94bbb10c32cc0d714afdf942291fc41"
   integrity sha512-RpFbQGUE74iyPgvr46U9t1xoQBM8T4BL8SxrN66Le2xYAPSaDJJKeztV3awugusb3g3G9iL8StmkBBXhcbbXhg==
