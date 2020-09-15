@@ -3,30 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/jest": "24.0.18",
-    "@types/node": "12.7.5",
-    "@types/react": "16.9.2",
-    "@types/react-dom": "16.9.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-inspector": "^3.0.2",
-    "react-scripts": "3.1.2",
-    "react-vega": "^7.0.0-alpha.0",
-    "styled-components": "^4.3.2",
-    "typescript": "3.6.3",
-    "vega": "^5.6.0",
-    "vega-lite": "^4.0.0-beta.2",
+    "@types/jest": "26.0.13",
+    "@types/node": "14.10.1",
+    "@types/react": "16.9.49",
+    "@types/react-dom": "16.9.8",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-inspector": "^5.1.0",
+    "react-vega": "^7.4.1",
+    "styled-components": "^5.2.0",
+    "typescript": "^4.0.2",
+    "vega": "^5.15.0",
+    "vega-lite": "^4.15.0",
     "viz.js": "^2.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "tsc --noEmit && eslint src/**/*.{ts,tsx} --quiet --fix"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "start": "webpack-dev-server --open --config webpack/development.js",
+    "build": "webpack --config webpack/production.js",
+    "format": "prettier --write ."
   },
   "browserslist": {
     "production": [
@@ -43,13 +37,20 @@
   "devDependencies": {
     "@types/react-vega": "^6.0.0",
     "@types/recompose": "^0.30.7",
-    "@types/styled-components": "^4.1.19",
-    "@typescript-eslint/eslint-plugin": "^2.3.0",
-    "@typescript-eslint/parser": "^2.3.0",
-    "eslint": "^6.4.0",
-    "eslint-config-prettier": "^6.3.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-react": "^7.14.3",
-    "prettier": "^1.18.2"
+    "@types/styled-components": "^5.1.3",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.3.0",
+    "file-loader": "^6.1.0",
+    "html-webpack-plugin": "^4.4.1",
+    "prettier": "^2.1.1",
+    "sass": "^1.26.10",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^8.0.3",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-merge": "^5.1.4"
   }
 }

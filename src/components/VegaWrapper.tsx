@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Vega } from 'react-vega';
-import { chartData, chartSpec } from '../chart';
-import { View } from 'vega-typings';
-import './VegaWrapper.css';
+import React from "react";
+import PropTypes from "prop-types";
+import { Vega } from "react-vega";
+import { chartData, chartSpec } from "../chart";
+import { View } from "vega-typings";
+import "./VegaWrapper.css";
 
 interface VegaWrapperProps {
   onNewView?: (view: View) => void;
@@ -26,15 +26,12 @@ export class VegaWrapper extends React.Component<VegaWrapperProps> {
         <Vega
           spec={chartSpec}
           data={chartData}
-          width={chartSpec.width}
-          height={chartSpec.height}
           renderer="svg"
           actions={false}
-          onNewView={(view): {} => {
+          onNewView={(view) => {
             if (this.props.onNewView !== undefined) {
               this.props.onNewView(view);
             }
-            return {};
           }}
         />
       </div>
