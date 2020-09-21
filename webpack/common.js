@@ -35,4 +35,7 @@ module.exports = {
       template: path.join(basePath, "src", "index.html"),
     }),
   ],
+  optimization: {
+    minimize: false,
+  },
 };
