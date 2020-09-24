@@ -1,6 +1,7 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 
 const basePath = path.resolve(__dirname, "..");
 
@@ -45,6 +46,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(basePath, "src", "index.html"),
     }),
+    new MonacoWebpackPlugin(),
   ],
   optimization: {
     minimize: false,
