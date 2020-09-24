@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 const basePath = path.resolve(__dirname, "..");
 
@@ -49,6 +50,9 @@ module.exports = {
     }),
     new MonacoWebpackPlugin(),
     new ManifestPlugin(),
+    new FaviconsWebpackPlugin(
+      path.join(basePath, "src", "images", "favicon.png")
+    ),
   ],
   optimization: {
     minimize: false,
