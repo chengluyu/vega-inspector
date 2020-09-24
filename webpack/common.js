@@ -23,7 +23,18 @@ module.exports = {
       },
       {
         test: /\.pcss$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [require("tailwindcss"), require("autoprefixer")],
+              },
+            },
+          },
+        ],
       },
       { test: /\.(?:gif|jpg|png|svg|webp)$/, use: ["file-loader"] },
       { test: /\.(?:eot|otf|ttf|woff|woff2)$/, use: ["file-loader"] },
