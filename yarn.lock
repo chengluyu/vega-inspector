@@ -615,6 +615,14 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-inspector@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@types/react-inspector/-/react-inspector-4.0.1.tgz#2009e91321e41b86f7c5a7494f316fcff149a971"
+  integrity sha512-upvnwdUq6lw3PXIXuHxbO8E51stPg73Rf0TTFXnDpCQD6yDgq/h3yIDrSLL1i3STx2/WsSU4oFYczkNnPp+5Ng==
+  dependencies:
+    "@types/react" "*"
+    csstype "^3.0.2"
+
 "@types/react-native@*":
   version "0.63.20"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.63.20.tgz#15ccf000bf849d867b15d14d2b4acc364fb7fa27"

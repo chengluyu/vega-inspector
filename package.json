@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-inspector": "^4.0.1",
     "@types/react-svg-pan-zoom": "^3.3.1",
     "@types/react-vega": "^6.0.0",
     "@types/recompose": "^0.30.7",
