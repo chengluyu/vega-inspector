@@ -6,8 +6,8 @@ A tool helps you know what’s happening inside Vega’s runtime.
 
 ## Authors
 
-* Luyu Cheng ([@chengluyu](https://github.com/chengluyu)) – [IDEAS Lab](ideaslab.wang/)
-* Yue Zhao ([@z-jack](https://github.com/z-jack)) – [IDEAS Lab](ideaslab.wang/)
+* Luyu Cheng ([@chengluyu](https://github.com/chengluyu)) – [IDEAS Lab](https://ideaslab.wang/)
+* Yue Zhao ([@z-jack](https://github.com/z-jack)) – [IDEAS Lab](https://ideaslab.wang/)
 
 ## License
 
