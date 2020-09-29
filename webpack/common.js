@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const RemarkHTML = require("remark-html");
 
 const basePath = path.resolve(__dirname, "..");
 
@@ -41,6 +42,16 @@ module.exports = {
       },
       { test: /\.(?:gif|jpg|png|svg|webp)$/, use: ["file-loader"] },
       { test: /\.(?:eot|otf|ttf|woff|woff2)$/, use: ["file-loader"] },
+      {
+        test: /\.md$/,
+        use: [
+          "raw-loader",
+          {
+            loader: "remark-loader",
+            options: { remarkOptions: { plugins: [RemarkHTML] } },
+          },
+        ],
+      },
     ],
   },
   plugins: [
