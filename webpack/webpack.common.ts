@@ -1,18 +1,21 @@
-const path = require("path");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
-const ManifestPlugin = require("webpack-manifest-plugin");
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
-const RemarkHTML = require("remark-html");
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
+import FaviconsWebpackPlugin from "favicons-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import MonacoWebpackPlugin from "monaco-editor-webpack-plugin";
+import RemarkHTML from "remark-html";
+import * as webpack from "webpack";
+import { WebpackManifestPlugin } from "webpack-manifest-plugin";
+import * as paths from "./paths";
 
-const basePath = path.resolve(__dirname, "..");
+type WebpackPlugin =
+  | ((this: webpack.Compiler, compiler: webpack.Compiler) => void)
+  | webpack.WebpackPluginInstance;
 
-module.exports = {
-  entry: path.join(basePath, "src", "index.tsx"),
+const common: webpack.Configuration = {
+  entry: paths.src("index.tsx"),
   output: {
     filename: "[name].bundle.js",
-    path: path.join(basePath, "dist"),
+    path: paths.dist(),
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
@@ -55,17 +58,18 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join(basePath, "src", "index.html"),
+      template: paths.src("index.html"),
     }),
     new MonacoWebpackPlugin(),
-    new ManifestPlugin(),
-    new FaviconsWebpackPlugin(
-      path.join(basePath, "src", "images", "favicon.png")
-    ),
+    new WebpackManifestPlugin() as WebpackPlugin,
+    new FaviconsWebpackPlugin(paths.src("images", "favicon.png")),
   ],
   optimization: {
     minimize: false,
   },
 };
+
+export default common;
