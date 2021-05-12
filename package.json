@@ -55,7 +55,7 @@
     "file-loader": "^6.1.0",
     "html-webpack-plugin": "^4.5.0",
     "monaco-editor-webpack-plugin": "^2.0.0",
-    "postcss": "^8.0.9",
+    "postcss": "^8.2.10",
     "postcss-loader": "^4.0.2",
     "prettier": "^2.1.2",
     "raw-loader": "^4.0.1",
