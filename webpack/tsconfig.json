@@ -66,5 +66,6 @@
     /* Advanced Options */
     "skipLibCheck": true,                     /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
-  }
+  },
+  "files": ["paths.ts", "webpack.common.ts", "webpack.dev.ts", "webpack.prod.ts"]
 }

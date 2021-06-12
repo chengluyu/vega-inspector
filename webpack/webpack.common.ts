@@ -11,6 +11,8 @@ type WebpackPlugin =
   | ((this: webpack.Compiler, compiler: webpack.Compiler) => void)
   | webpack.WebpackPluginInstance;
 
+console.log(paths.root("tsconfig.json"));
+
 const common: webpack.Configuration = {
   entry: paths.src("index.tsx"),
   output: {
@@ -23,7 +25,13 @@ const common: webpack.Configuration = {
   module: {
     rules: [
       { test: /\.css$/, use: ["style-loader", "css-loader"] },
-      { test: /\.tsx?$/, loader: "ts-loader" },
+      {
+        test: /\.tsx?$/,
+        loader: "ts-loader",
+        options: {
+          configFile: paths.root("tsconfig.json"),
+        },
+      },
       {
         test: /\.s[ac]ss$/i,
         use: ["style-loader", "css-loader", "sass-loader"],

@@ -9,32 +9,10 @@ export type TutorialPopupContentProps = {
   onClose: () => void;
 };
 
-const TutorialPopupContent: React.FC<TutorialPopupContentProps> = ({
-  style,
-  onClose,
-}) => (
-  <animated.div
-    className="text-content fixed top-1/2 left-1/2 mx-auto bg-white rounded shadow-lg translate-1/2 overflow-auto"
-    role="dialog"
-    style={style}
-  >
-    <header className="flex items-center px-4 py-2 text-gray-100 bg-gray-800 font-bold text-lg rounded-t">
-      Tutorials
-      <button className="ml-auto" onClick={onClose}>
-        <FontAwesomeIcon icon="times" fixedWidth />
-      </button>
-    </header>
-    <main
-      className="px-4 pt-2 pb-4"
-      dangerouslySetInnerHTML={{ __html: tutorialHtml }}
-    ></main>
-  </animated.div>
-);
-
 export type TutorialPopupProps = { show: boolean; onClose: () => void };
 
 const TutorialPopup: React.FC<TutorialPopupProps> = ({ show, onClose }) => {
-  const popupTransition = useTransition(show, null, {
+  const popupTransition = useTransition(show, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
@@ -47,9 +25,24 @@ const TutorialPopup: React.FC<TutorialPopupProps> = ({ show, onClose }) => {
           onClick={onClose}
         />
       ) : null}
-      {popupTransition.map(({ item, key, props }) =>
+      {popupTransition((style, item) =>
         item ? (
-          <TutorialPopupContent key={key} style={props} onClose={onClose} />
+          <animated.div
+            className="text-content fixed top-1/2 left-1/2 mx-auto bg-white rounded shadow-lg translate-1/2 overflow-auto"
+            role="dialog"
+            style={style}
+          >
+            <header className="flex items-center px-4 py-2 text-gray-100 bg-gray-800 font-bold text-lg rounded-t">
+              Tutorials
+              <button className="ml-auto" onClick={onClose}>
+                <FontAwesomeIcon icon="times" fixedWidth />
+              </button>
+            </header>
+            <main
+              className="px-4 pt-2 pb-4"
+              dangerouslySetInnerHTML={{ __html: tutorialHtml }}
+            ></main>
+          </animated.div>
         ) : null
       )}
     </>
